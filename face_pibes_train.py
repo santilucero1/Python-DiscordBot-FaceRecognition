@@ -75,6 +75,6 @@ face_recognizer.train(feautures,labels)
 np.save("featurespibes.npy", feautures)
 np.save("Labelspibes.npy",labels)
 #Can save this training mode in anothe file using yml
-face_recognizer.save("face_pibes_trained.yml")
+face_recognizer.save("face_pibes_trained.yml")#save the result of the train to the  "something.yml" file
 
 cv.waitKey(0)
