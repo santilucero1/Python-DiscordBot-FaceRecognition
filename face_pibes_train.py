@@ -6,17 +6,23 @@ import cv2 as cv
 from matplotlib.pyplot import gray
 import numpy as np
 
+#!!!
+#Firs at all you have to download the haarcascade file here: https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
+
+
+#Get the names of the "peoples folders" with the pics in the "Train folder"
 p = []
-
-for i in os.listdir(r'C:\Opencv Test\trainpibes'):
+for i in os.listdir(r'path'):#Example C:\Opencv Test\trainpibes
     p.append(i)
-
 print(p)
 
-DIR = r"C:\Opencv Test\trainpibes"
+#Dir to Train Folder
+DIR = r'path' #Example "C:\Opencv Test\trainpibes"
 
+#Instance the haarcascade
 haar_cascade = cv.CascadeClassifier("haar_face.xml")
 
+#Empty list of feautures and labels
 feautures = []
 labels = []
 
@@ -26,16 +32,19 @@ def create_train():
         path = os.path.join(DIR, person)
         label = p.index(person)
         
+        #get the path of the imgs
         for img in os.listdir(path):
             img_path = os.path.join(path,img)
 
             img_array = cv.imread(img_path)
             if img_array is None:
                 continue 
+            
+            #Trasnform to gray
             gray = cv.cvtColor(img_array,cv.COLOR_BGR2GRAY)
             
 
-            # #get position of the faces
+            #Get position of the faces
             faces_rect = haar_cascade.detectMultiScale(gray,scaleFactor=1.1,minNeighbors=5)
             
             for (x,y,w,h) in faces_rect:
@@ -45,6 +54,7 @@ def create_train():
                 feautures.append(faces_roi)
                 labels.append(label)
 
+#Execute the train
 create_train()
 print("Training done-----------")
 
