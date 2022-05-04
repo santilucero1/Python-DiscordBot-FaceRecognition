@@ -32,4 +32,4 @@ async def who(ctx):
 
 
 
-bot.run("ODI0NDg1NTA3MDA2MjAxOTM2.YFwD9w.rEB0nbYkQ879Vkmh3J1eDyxI-Js")
+bot.run("Token")
