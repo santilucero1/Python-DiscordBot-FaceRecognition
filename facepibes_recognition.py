@@ -19,13 +19,9 @@ for i in os.listdir(r'path to the train folder'):#Example C:\Opencv Test\trainpi
 
 #instance haarcascade
 haar_cascade = cv.CascadeClassifier("haar_face.xml")
-
-# features = np.load("features.npy")
-# labels = np.load("labels.npy")
-# i can use these data say ,allow_pickle=True
-
+#instance face recognizer
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
-face_recognizer.read("trainedfile.yml")#face_pibes_trained.yml
+face_recognizer.read("trainedfile.yml")#Example face_pibes_trained.yml
 
 def url_to_image(url):
     
