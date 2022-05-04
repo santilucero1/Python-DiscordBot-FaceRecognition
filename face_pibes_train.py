@@ -72,9 +72,9 @@ face_recognizer = cv.face.LBPHFaceRecognizer_create()
 face_recognizer.train(feautures,labels)
 
 #Save features and labels
-np.save("featurespibes.npy", feautures)
-np.save("Labelspibes.npy",labels)
+np.save("something.npy", feautures) #Example featurespibes.npy
+np.save("something2.npy",labels)#Example Labelspibes.npy
 #Can save this training mode in anothe file using yml
-face_recognizer.save("face_pibes_trained.yml")#save the result of the train to the  "something.yml" file
+face_recognizer.save("something.yml")#save the result of the train to the  "something.yml" file #Example face_pibes_trained.yml
 
 cv.waitKey(0)
