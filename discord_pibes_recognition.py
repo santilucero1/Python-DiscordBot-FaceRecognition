@@ -15,13 +15,12 @@ async def on_ready():
 @bot.command()
 async def who(ctx):
 
+    #Get the http url from the img when you sent to chat
     url = ctx.message.attachments[0].url
-
-    print(url)
-    
+    #Get the values of label an confidence
     label, confidence = url_to_image(url)
 
-    await ctx.send('Este flaco es {} con una confiabilidad del {}'.format(label, confidence))
-    await ctx.send(file=discord.File('C:\Opencv Test\garbagefolder\imgrecogniced.jpg'))
+    await ctx.send('This is {} with a confidence value of {}'.format(label, confidence))
+    await ctx.send(file=discord.File('path to the recogniced img')) #Example C:\Opencv Test\garbagefolder\imgrecogniced.jpg
 
 bot.run("Token")
