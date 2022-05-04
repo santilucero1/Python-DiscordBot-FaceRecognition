@@ -24,12 +24,4 @@ async def who(ctx):
     await ctx.send('Este flaco es {} con una confiabilidad del {}'.format(label, confidence))
     await ctx.send(file=discord.File('C:\Opencv Test\garbagefolder\imgrecogniced.jpg'))
 
-
-
-
-
-
-
-
-
 bot.run("Token")
