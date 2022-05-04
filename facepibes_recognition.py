@@ -14,9 +14,10 @@ import urllib.request
 
 p = []
 
-for i in os.listdir(r'C:\Opencv Test\trainpibes'):
+for i in os.listdir(r'path to the train folder'):#Example C:\Opencv Test\trainpibes
     p.append(i)
 
+#instance haarcascade
 haar_cascade = cv.CascadeClassifier("haar_face.xml")
 
 # features = np.load("features.npy")
@@ -24,7 +25,7 @@ haar_cascade = cv.CascadeClassifier("haar_face.xml")
 # i can use these data say ,allow_pickle=True
 
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
-face_recognizer.read("face_pibes_trained.yml")
+face_recognizer.read("")#face_pibes_trained.yml
 
 def url_to_image(url):
     
